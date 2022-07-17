@@ -1,0 +1,28 @@
+<div class="row" id="sect1">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="card mx-5 my-3 max-width=18rem" id="card1">
+          <div class="card-header">
+            <h3>Login</h3>
+          </div>
+          <div class="card-body">
+            <form class="form col-md-6" #userlogin="ngForm" (ngSubmit)="loginUser()">
+              <div class="form-group">
+                <label for="username">Email</label>   
+                <input type="text" placeholder="Enter your registerd email id" class="form-control" [(ngModel)]="User.username" name="username" #email="ngModel" class.is-invalid="email.invalid & email.touched" pattern="^[a-z0-9.%+]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
+                <small [class.d-none]="email.valid || email.untouched" class="text-danger">Enter valid email</small> 
+              </div>
+              <div class="form-group">
+                <label for="password">password</label>
+                <input type="password"  placeholder="Enter your password" class="form-control" [(ngModel)]="User.password" #password="ngModel" class.is-invalid="password.invalid & password.touched" name="password" minlength="4" required>
+                <small [class.d-none]="password.valid || password.untouched" class="text-danger">Enter correct password</small> 
+              </div>
+              <br>
+              <button class="btn btn-warning" [disabled]="userlogin.form.invalid">LogIn  </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+  </div>
+      

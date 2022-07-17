@@ -1,0 +1,46 @@
+<div id="sect1">
+    <div class="card" id="books">
+        <div class="card-header" style="color: yellow; font-size: larger;">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                            </th>
+                            <th>Book Name</th>
+                            <th>Author</th>
+                            <th>Description</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let book of books'>
+                            <td><img 
+                                 [src]='book.imageUrl'
+                                 [title] = 'book.bookName'
+                                 [style.width.px] = 'imageWidth' 
+                                 [style.margin.px] = 'imageMargin'
+                            ></td>
+                            <td>{{ book.bookName }}</td>
+                            <td>{{ book.Author }}</td>
+                            <td>{{ book.description }}</td>
+                            <td>
+                            <button class="btn btn-warning" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="editBook(book)" style="margin-left: 20px;"> Update</button>
+                            </td>
+                            <td>
+                            <button class="btn btn-danger" style="cursor:pointer" *ngIf="_auth.loggedIn()"(click)="deleteBook(book)"> Delete</button>
+                            </td>
+                        </tr>
+    
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+    </div>
+</div>

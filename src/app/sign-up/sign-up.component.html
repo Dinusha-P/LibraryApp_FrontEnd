@@ -1,0 +1,33 @@
+<div class="row" id="sect1">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="card mx-5 my-3 max-width=18rem" id="card1">
+          <div class="card-header">
+            <h3>SignUp</h3>
+          </div>
+          <div class="card-body">
+            <form class="form col-md-6" #userlogin="ngForm" (ngSubmit)="signupUser()">
+              <div class="form-group">
+                <label for="username">Email</label>    
+                <input type="text" placeholder="Enter your email id" class="form-control" [(ngModel)]="User.username" name="username" #email="ngModel" class.is-invalid="email.invalid & email.touched" pattern="^[a-z0-9.%+]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
+                <small [class.d-none]="email.valid || email.untouched" class="text-danger">Enter valid email</small>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" [(ngModel)]="User.password" #password="ngModel" class.is-invalid="password.invalid & password.touched" name="password" minlength="4" required>
+                <small [class.d-none]="password.valid || password.untouched" class="text-danger">Password word strength  not enough</small> 
+              </div>
+              <div class="form-group">
+                <label for="password">Confirm Password</label>
+                <input type="password" class="form-control" [(ngModel)]="psw" #password1="ngModel" class.is-invalid="password1.invalid & password1.touched" name="psw" minlength="4" required>
+                <small [class.d-none]="password1.untouched"  class="text-danger" *ngIf="confirmPsw()">enter same password</small> 
+              </div>
+              <br>
+              <button class="btn btn-dark" [disabled]="userlogin.form.invalid || confirmPsw()" >SignUp </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+  </div>
+      

@@ -1,0 +1,18 @@
+
+#sect1{  
+    background-image: url("/assets/images/bg1.jpg");  
+    background-size: 100%;  
+    background-size: cover;  
+}  
+thead{
+    color:#98878F
+}
+#books{
+    background-image: url("/assets/images/bg6.jpg");
+    background-color: #192231;
+    background-size: 100%;  
+    background-size: cover;
+}
+td{
+    color: beige;
+}
